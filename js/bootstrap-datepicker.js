@@ -602,7 +602,6 @@
 			if (element) {
 				element.val('');
 			}
-			this._trigger('clearDate');
 			this.update();
 			this._trigger('changeDate');
 

@@ -261,7 +261,7 @@ test('Clear button: triggers change, changeDate and clearDate events', function(
         change: function(){
             triggered_change++;
         },
-        clearDate: function(){
+        clearDate: function() {
             triggered_clearDate++;
         }
     });
@@ -273,9 +273,9 @@ test('Clear button: triggers change, changeDate and clearDate events', function(
     target = this.picker.find('.datepicker-days tfoot .clear');
     target.click();
 
-    equal(triggered_change, 1);
-    equal(triggered_changeDate, 1);
-    equal(triggered_clearDate, 1);
+    equal(triggered_change, 1, 'change OK');
+    equal(triggered_changeDate, 1, 'changeDate OK');
+    equal(triggered_clearDate, 1, 'clearDate OK');
 });
 
 test('Clear button: triggers change, changeDate and clearDate events on span element', function(){
@@ -301,21 +301,21 @@ test('Clear button: triggers change, changeDate and clearDate events on span ele
         change: function(){
             triggered_change++;
         },
-        clearDate: function(){
+        clearDate: function() {
             triggered_clearDate++;
         }
     });
 
-    this.span.click();
+    $('span.due_date').click();
     ok(this.picker.find('.datepicker-days').is(':visible'), 'Days view visible');
     ok(this.picker.find('.datepicker-days tfoot .clear').is(':visible'), 'Clear button visible');
 
     target = this.picker.find('.datepicker-days tfoot .clear');
     target.click();
 
-    equal(triggered_change, 1);
-    equal(triggered_changeDate, 1);
-    equal(triggered_clearDate, 1);
+    equal(triggered_change, 1, 'change OK');
+    equal(triggered_changeDate, 1, 'changeDate OK');
+    equal(triggered_clearDate, 1, 'clearDate OK');
 });
 
 test('setDate: triggers change and changeDate events', function(){
@@ -393,7 +393,7 @@ test('Selecting date from previous month triggers changeMonth', function() {
 
     // ensure event has been triggered
     equal(triggered, 1);
-})
+});
 
 test('Selecting date from previous month in january triggers changeMonth/changeYear', function() {
     var target,
@@ -418,7 +418,7 @@ test('Selecting date from previous month in january triggers changeMonth/changeY
     // ensure event has been triggered
     equal(triggeredM, 1);
     equal(triggeredY, 1);
-})
+});
 
 test('Selecting date from next month triggers changeMonth', function() {
     var target,
@@ -434,7 +434,7 @@ test('Selecting date from next month triggers changeMonth', function() {
 
     // ensure event has been triggered
     equal(triggered, 1);
-})
+});
 
 test('Selecting date from next month in december triggers changeMonth/changeYear', function() {
     var target,
@@ -459,4 +459,4 @@ test('Selecting date from next month in december triggers changeMonth/changeYear
     // ensure event has been triggered
     equal(triggeredM, 1);
     equal(triggeredY, 1);
-})
+});
