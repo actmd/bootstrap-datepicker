@@ -601,7 +601,10 @@
 
 			if (element) {
 				element.val('');
+			} else if (this.element.data("date")) {
+				this.element.data("date", '');
 			}
+
 			this.update();
 			this._trigger('changeDate');
 
